@@ -20,7 +20,7 @@ public class TwitterAuthorsCounter {
 
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             CSVParser parser = new CSVParser();
-            String[] fields = parser.parseLine(value.toString());
+            String[] fields = parser.parseLineMulti(value.toString());
             word.set(fields[4]);
             context.write(word, one);
         }
@@ -41,6 +41,8 @@ public class TwitterAuthorsCounter {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
+        conf.get("fs.defaultFS",
+                "hdfs://billhdp01.training.dev:8020");
         Job job = Job.getInstance(conf, "twitter authors count");
         job.setJarByClass(TwitterAuthorsCounter.class);
         job.setMapperClass(AuthorRetriveMapper.class);
