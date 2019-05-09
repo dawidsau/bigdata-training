@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 public class TwitterAuthorsCounterExercise {
-    public static class AuthorRetriveMapper extends Mapper<Object, Text, Text, IntWritable> {
+    public static class AuthorRetrieveMapper extends Mapper<Object, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
 
@@ -40,12 +40,16 @@ public class TwitterAuthorsCounterExercise {
     }
 
     public static void main(String[] args) throws Exception {
+        jobAndHDFSConfiguration(args);
+    }
+
+    public static void jobAndHDFSConfiguration(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         Configuration conf = new Configuration();
         conf.get("fs.defaultFS",
                 "hdfs://billhdp01.training.dev:8020");
         Job job = Job.getInstance(conf, "twitter authors count");
         job.setJarByClass(TwitterAuthorsCounterExercise.class);
-        job.setMapperClass(AuthorRetriveMapper.class);
+        job.setMapperClass(AuthorRetrieveMapper.class);
         job.setCombinerClass(IntSumReducer.class);
         job.setReducerClass(IntSumReducer.class);
         job.setOutputKeyClass(Text.class);

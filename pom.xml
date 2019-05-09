@@ -8,7 +8,7 @@
     <artifactId>exercise2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
-        <finalName>Twitter-Exercise</finalName>
+        <finalName>HBase-Exercise-v1.0</finalName>
         <plugins>
             <!-- download source code in Eclipse, best practice -->
             <plugin>
@@ -45,7 +45,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-                            <mainClass>com.billennium.training.exercise3.TwitterAuthorsCounterExercise</mainClass>
+                            <mainClass>com.billennium.training.exercise4.HBaseExercise</mainClass>
                         </manifest>
                     </archive>
 
@@ -89,6 +89,17 @@
             <artifactId>opencsv</artifactId>
             <version>2.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-client</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+                <scope>provided</scope>
+            </dependency>
     </dependencies>
 
 </project>
