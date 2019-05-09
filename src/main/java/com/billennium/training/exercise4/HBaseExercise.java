@@ -1,6 +1,7 @@
 package com.billennium.training.exercise4;
 
 import au.com.bytecode.opencsv.CSVReader;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -18,21 +19,22 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
+@Getter
 public class HBaseExercise {
 
     private Configuration config;
     private String tableName;
     private String namespace;
 
-    public HBaseExercise() {
+    public HBaseExercise(String tableName, String namespace) {
+        this.namespace = namespace;
+        this.tableName = tableName;
         config = HBaseConfiguration.create();
         config.addResource(new Path("/etc/hbase/conf", "hbase-site.xml"));
         config.addResource(new Path("/etc/hadoop/conf", "core-site.xml"));
-        tableName = "twitter";
-        namespace = "dsauermann";
     }
 
-    public static void createOrOverwrite(Admin admin, HTableDescriptor table) throws IOException {
+    public void createOrOverwrite(Admin admin, HTableDescriptor table) throws IOException {
         if (admin.tableExists(table.getTableName())) {
             admin.disableTable(table.getTableName());
             admin.deleteTable(table.getTableName());
@@ -43,7 +45,7 @@ public class HBaseExercise {
         System.out.println("Table created [" + table.getNameAsString() + "]");
     }
 
-    public static void createNamespace(Admin admin, String namespace) throws IOException {
+    public void createNamespace(Admin admin, String namespace) throws IOException {
         NamespaceDescriptor desc = admin.getNamespaceDescriptor(namespace);
         if (desc == null) {
             desc = NamespaceDescriptor.create(namespace).build();
@@ -51,7 +53,7 @@ public class HBaseExercise {
         }
     }
 
-    public static void createSchemaTables(Configuration config, String namespace, String tableName, List<String> columnFamilies) throws IOException {
+    public void createSchemaTables(Configuration config, String namespace, String tableName, List<String> columnFamilies) throws IOException {
         try (Connection connection = ConnectionFactory.createConnection(config); Admin admin = connection.getAdmin()) {
             createNamespace(admin, namespace);
             HTableDescriptor table = new HTableDescriptor(TableName.valueOf(namespace, tableName));
@@ -64,7 +66,7 @@ public class HBaseExercise {
         }
     }
 
-    public static void insertData(Configuration config, String namespace, String tableName, String rowkey, String columnFamily, Map<String, String> data) throws IOException {
+    public void insertData(Configuration config, String namespace, String tableName, String rowkey, String columnFamily, Map<String, String> data) throws IOException {
         try (Connection connection = ConnectionFactory.createConnection(config)) {
             Put p = new Put(Bytes.toBytes(rowkey));
             data.forEach((col, v) ->
@@ -76,7 +78,7 @@ public class HBaseExercise {
         }
     }
 
-    public static void findAndPrint(Configuration config, String namespace, String tableName, String keyPrefix, String cf, String qualifier, String value, String qualifierToPrint, int limit) throws IOException {
+    public void findAndPrint(Configuration config, String namespace, String tableName, String keyPrefix, String cf, String qualifier, String value, String qualifierToPrint, int limit) throws IOException {
         try (Connection connection = ConnectionFactory.createConnection(config)) {
             Scan scanner = new Scan();
             FilterList filters = new FilterList(FilterList.Operator.MUST_PASS_ALL);
@@ -89,8 +91,8 @@ public class HBaseExercise {
             ResultScanner results = table.getScanner(scanner);
             Iterator<Result> iter = results.iterator();
             int count = 0;
-            System.out.println("Scanning table [" + tableName + "]");
-            System.out.println("Results:");
+            log.info("Scanning table [" + tableName + "]");
+            log.info("Results:");
             while (iter.hasNext() && count < limit) {
                 count++;
                 Result r = iter.next();
@@ -100,7 +102,7 @@ public class HBaseExercise {
         }
     }
 
-    public void insertDataToHBaseFromCSV(String csvPath) throws IOException {
+    private void insertDataToHBaseFromCSV(String csvPath) throws IOException {
         FileReader fileReader = new FileReader(new Path(csvPath).toString());
         CSVReader reader = new CSVReader(fileReader);
         List<String[]> allValues = reader.readAll();
@@ -108,7 +110,6 @@ public class HBaseExercise {
         Map<String, String> data = new HashMap<>();
         allValues.stream()
                 .forEach(f -> {
-                    System.out.println(f);
                     data.put("polarity", f[0]);
                     data.put("id", f[1]);
                     data.put("date", f[2]);
@@ -120,13 +121,12 @@ public class HBaseExercise {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(data);
                     data.clear();
                 });
     }
 
     public static void main(String[] args) throws Exception {
-        HBaseExercise exercise = new HBaseExercise();
+        HBaseExercise exercise = new HBaseExercise("twitter", "dsauermann");
         exercise.insertDataToHBaseFromCSV(args[0]);
         log.info("Job done");
         System.exit(0);

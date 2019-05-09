@@ -8,7 +8,7 @@
     <artifactId>exercise2</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
-        <finalName>HBase-Exercise-v1.0</finalName>
+        <finalName>HBase-Exercise-v2.0</finalName>
         <plugins>
             <!-- download source code in Eclipse, best practice -->
             <plugin>
