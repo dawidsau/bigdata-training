@@ -54,7 +54,8 @@ public class HBaseExercise {
     }
 
     public void createSchemaTables(Configuration config, String namespace, String tableName, List<String> columnFamilies) throws IOException {
-        try (Connection connection = ConnectionFactory.createConnection(config); Admin admin = connection.getAdmin()) {
+        try (Connection connection = ConnectionFactory.createConnection(config);
+            Admin admin = connection.getAdmin()) {
             createNamespace(admin, namespace);
             HTableDescriptor table = new HTableDescriptor(TableName.valueOf(namespace, tableName));
             columnFamilies.forEach(c -> {
