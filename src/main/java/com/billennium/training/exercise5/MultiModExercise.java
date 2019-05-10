@@ -24,7 +24,7 @@ public class MultiModExercise {
         hBaseService.putCsvRecords("/training/twitter/testdata.manual.2009.06.14.csv", "dsauermann", "twitter");
         mapReduceService.countUsersTwits("/tmp/twitter/*", "/user/dsauermann/mr_outputs/twitter/");
         hBaseService.createNewTable("dsauermann:result", Arrays.asList("value"));
-        File file = BaseConfiguration.getHDFSConfig().getFile("/user/dsauermann/mr_outputs/twitter", "part-r-00000");
+        File file = BaseConfiguration.getHDFSConfig().getFile("/user/dsauermann/mr_outputs/twitter/", "part-r-00000");
         hBaseService.putMapReduceResult(file, "dsauermann", "result");
     }
 

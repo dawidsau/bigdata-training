@@ -7,19 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6c2a0b5-5ca3-41a2-a557-8d244a0a09ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/BaseConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/BasicHBaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/HBaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/BasicHdfsWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/HdfsWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/MapReduceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise4/HBaseExercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise4/HBaseExercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/billennium/training/exercise4/HBaseExercise.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/billennium/training/exercise4/HBaseExercise.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/BasicHBaseService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="1054">
               <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -61,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise3/TwitterAuthorsCounterExercise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="289">
               <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -73,8 +63,65 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/BaseConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/MapReduceService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/HdfsWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/BasicHdfsWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,15 +137,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/MapReduceService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -147,10 +185,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/HBaseService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAurhorCounter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise4/HBaseExercise.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/BasicHBaseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java" />
       </list>
     </option>
   </component>
@@ -398,7 +436,7 @@
       <workItem from="1557298304673" duration="14860000" />
       <workItem from="1557390712489" duration="8220000" />
       <workItem from="1557401221385" duration="12530000" />
-      <workItem from="1557470819894" duration="21200000" />
+      <workItem from="1557470819894" duration="22404000" />
     </task>
     <servers />
   </component>
@@ -417,7 +455,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61143000" />
+    <option name="totallyTimeSpent" value="62347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,7 +475,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.50398403" side_tool="true" weight="0.1609808" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49601594" visible="true" weight="0.16257995" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49601594" visible="true" weight="0.16257995" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
@@ -446,7 +484,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.46045503" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.46045503" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.45612136" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32936078" />
@@ -467,6 +505,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-client/2.7.3.2.6.3.0-235/hadoop-client-2.7.3.2.6.3.0-235.pom">
@@ -3454,26 +3504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/HdfsWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/BasicHdfsWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.7.3.2.6.3.0-235/hadoop-mapreduce-client-core-2.7.3.2.6.3.0-235-sources.jar!/org/apache/hadoop/mapreduce/Mapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -3502,53 +3532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/BaseConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/HBaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/MapReduceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise3/TwitterAuthorsCounterExercise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-common/2.7.3.2.6.3.0-235/hadoop-common-2.7.3.2.6.3.0-235-sources.jar!/org/apache/hadoop/conf/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -3573,10 +3556,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/BaseConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/TwitterAuthorCounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/mapreduce/MapReduceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/HdfsWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hdfs/BasicHdfsWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/HBaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/hbase/BasicHBaseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1054">
           <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise3/TwitterAuthorsCounterExercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3585,8 +3635,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/billennium/training/exercise5/MultiModExercise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

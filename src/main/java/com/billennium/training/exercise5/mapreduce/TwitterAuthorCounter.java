@@ -1,7 +1,6 @@
 package com.billennium.training.exercise5.mapreduce;
 
 import au.com.bytecode.opencsv.CSVParser;
-import com.billennium.training.exercise2.TwitterAuthorsCounter;
 import com.billennium.training.exercise5.BaseConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.conf.Configuration;
@@ -26,7 +25,7 @@ public class TwitterAuthorCounter implements MapReduceService {
 
         Configuration conf = BaseConfiguration.getHDFSConfig();
         Job job = Job.getInstance(conf, "Calculation Users Twits");
-        job.setJarByClass(TwitterAuthorsCounter.class);
+        job.setJarByClass(TwitterAuthorCounter.class);
         job.setMapperClass(AuthorRetrieveMapper.class);
         job.setCombinerClass(IntSumReducer.class);
         job.setReducerClass(IntSumReducer.class);

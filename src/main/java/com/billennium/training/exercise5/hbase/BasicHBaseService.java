@@ -71,9 +71,10 @@ public class BasicHBaseService implements HBaseService {
 
     }
 
+
+    //TODO if exists not need to add or replace
     @Override
     public void createNewTable(String tableName, List<String> columnFamily) throws IOException {
-//        Configuration hBaseConf = HBaseConfiguration.create();
         HBaseAdmin admin = new HBaseAdmin(BaseConfiguration.getHDFSConfig());
         HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(tableName));
         columnFamily.forEach(s ->
