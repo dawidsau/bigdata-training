@@ -10,7 +10,6 @@ import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -49,19 +48,23 @@ public class BasicHBaseService implements HBaseService {
     }
 
     @Override
-    public void putMapReduceResult(File file, String namespace, String tableName) throws IOException {
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+    public void putMapReduceResult(File file, String namespace, String tableName, String columnFamily) throws IOException {
         Map<String, String> result = new HashMap<>();
-        String line = bufferedReader.readLine();
-        int iterable = 1;
-        while (line != null) {
-            String[] lineValues = line.split(" ");
-            result.put(lineValues[0], lineValues[1]);
-            insertData(BaseConfiguration.getHDFSConfig(), namespace, tableName, "" + iterable++, "text", result);
+        FileReader fileReader = new FileReader(file);
+        CSVReader reader = new CSVReader(fileReader);
+        List<String[]> recordList = reader.readAll();
+        recordList.forEach(s ->
+                {
+                    result.put(s[0], s[0]);
+                    try {
+                        insertData(BaseConfiguration.getHDFSConfig(), namespace, tableName, s[0], columnFamily, result);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    result.clear();
+                }
+        );
 
-            line = bufferedReader.readLine();
-        }
         log.debug("Result data inserted into HBase table.");
     }
 

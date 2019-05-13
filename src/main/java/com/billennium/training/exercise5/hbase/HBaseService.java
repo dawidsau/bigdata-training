@@ -8,7 +8,7 @@ public interface HBaseService {
 
     void putCsvRecords(String path, String namespace, String tableName) throws IOException;
 
-    void putMapReduceResult(File file, String namespace, String tableName) throws IOException;
+    void putMapReduceResult(File file, String namespace, String tableName, String columnFamily) throws IOException;
 
     void scanAllRecords(String table, String namespace);
 

@@ -6,11 +6,13 @@ import com.billennium.training.exercise5.hdfs.BasicHdfsWorker;
 import com.billennium.training.exercise5.hdfs.HdfsWorker;
 import com.billennium.training.exercise5.mapreduce.MapReduceService;
 import com.billennium.training.exercise5.mapreduce.TwitterAuthorCounter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
+@Slf4j
 public class MultiModExercise {
 
 
@@ -19,13 +21,23 @@ public class MultiModExercise {
     private MapReduceService mapReduceService = new TwitterAuthorCounter();
 
 
-    public void init() throws IOException, InterruptedException, ClassNotFoundException {
+    public void init() throws IOException {
         hdfsWorker.copyFileFromLocalToHDFS("/training/twitter/testdata.manual.2009.06.14.csv", "/tmp/twitter");
         hBaseService.putCsvRecords("/training/twitter/testdata.manual.2009.06.14.csv", "dsauermann", "twitter");
-        mapReduceService.countUsersTwits("/tmp/twitter/*", "/user/dsauermann/mr_outputs/twitter/");
-        hBaseService.createNewTable("dsauermann:result", Arrays.asList("value"));
-        File file = BaseConfiguration.getHDFSConfig().getFile("/user/dsauermann/mr_outputs/twitter/", "part-r-00000");
-        hBaseService.putMapReduceResult(file, "dsauermann", "result");
+        try {
+            mapReduceService.countUsersTwits("/tmp/twitter/*", "/user/dsauermann/mr_outputs/twitter/");
+        } catch (InterruptedException | IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            log.warn("Map reduce method issued");
+        }
+        try {
+            hBaseService.createNewTable("dsauermann:result", Arrays.asList("value"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.warn("HBase table already created");
+        }
+        File file = new File("/home/dsauermann/twitter/part-r-00000");
+        hBaseService.putMapReduceResult(file, "dsauermann", "result", "value");
     }
 
 
@@ -33,7 +45,7 @@ public class MultiModExercise {
         MultiModExercise exercise = new MultiModExercise();
         try {
             exercise.init();
-        } catch (IOException | InterruptedException | ClassNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
