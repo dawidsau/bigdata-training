@@ -67,6 +67,13 @@ public class TwitterAuthorCounter implements MapReduceService {
             result.set(sum);
             context.write(key, result);
             log.debug("Reducer job done");
+
+//            Map<String, String> data = new HashMap<>();
+//            data.put(key.toString(),sum.toString());
+//            BasicHBaseService hBaseService = new BasicHBaseService();
+//            hBaseService.insertData(BaseConfiguration.getHDFSConfig(), "dsauermann", "result", key.toString(), "value", data);
+//            data.clear();
         }
     }
+
 }
