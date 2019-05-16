@@ -25,19 +25,21 @@ public class MultiModExercise {
         hdfsWorker.copyFileFromLocalToHDFS("/training/twitter/testdata.manual.2009.06.14.csv", "/tmp/twitter");
         hBaseService.putCsvRecords("/training/twitter/testdata.manual.2009.06.14.csv", "dsauermann", "twitter");
         try {
-            mapReduceService.countUsersTwits("/tmp/twitter/*", "/user/dsauermann/mr_outputs/twitter/");
-        } catch (InterruptedException | IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-            log.warn("Map reduce method issued");
-        }
-        try {
             hBaseService.createNewTable("dsauermann:result", Arrays.asList("value"));
         } catch (IOException e) {
             e.printStackTrace();
             log.warn("HBase table already created");
         }
+        try {
+            mapReduceService.countUsersTwits("/tmp/twitter/*", "/user/dsauermann/mr_outputs/twitter/");
+        } catch (InterruptedException | IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            log.warn("Map reduce method issued");
+        }
+        hdfsWorker.copyFileFromHDFSToLocal("/user/dsauermann/mr_outputs/twitter/part-r-00000","/home/dsauermann/twitter/part-r-00000");
         File file = new File("/home/dsauermann/twitter/part-r-00000");
         hBaseService.putMapReduceResult(file, "dsauermann", "result", "value");
+//        hBaseService.scanAllRecords("result","dsauermann");
     }
 
 

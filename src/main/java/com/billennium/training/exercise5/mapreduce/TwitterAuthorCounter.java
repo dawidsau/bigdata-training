@@ -18,11 +18,9 @@ import java.io.IOException;
 @Slf4j
 public class TwitterAuthorCounter implements MapReduceService {
 
-
     @Override
     public void countUsersTwits(String csvPath, String outputPath) throws IOException,
             ClassNotFoundException, InterruptedException {
-
         Configuration conf = BaseConfiguration.getHDFSConfig();
         Job job = Job.getInstance(conf, "Calculation Users Twits");
         job.setJarByClass(TwitterAuthorCounter.class);
@@ -35,7 +33,6 @@ public class TwitterAuthorCounter implements MapReduceService {
         FileOutputFormat.setOutputPath(job, new Path(outputPath));
         job.waitForCompletion(true);
         log.debug("Map reduce job done");
-
     }
 
 
@@ -68,6 +65,8 @@ public class TwitterAuthorCounter implements MapReduceService {
             context.write(key, result);
             log.debug("Reducer job done");
 
+
+            // Alternative how result can be inserted into db table
 //            Map<String, String> data = new HashMap<>();
 //            data.put(key.toString(),sum.toString());
 //            BasicHBaseService hBaseService = new BasicHBaseService();

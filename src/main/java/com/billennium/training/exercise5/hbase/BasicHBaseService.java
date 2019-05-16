@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +71,14 @@ public class BasicHBaseService implements HBaseService {
 
     //TODO Scan implementation
     @Override
-    public void scanAllRecords(String table, String namespace) {
+    public void scanAllRecords(String tableName, String namespace) throws IOException {
+        try (Connection con = ConnectionFactory.createConnection(BaseConfiguration.getHDFSConfig())) {
+            Table table = con.getTable(TableName.valueOf(namespace, tableName));
+            ResultScanner scanner = table.getScanner(new Scan());
+            for (Result result : scanner) {
+                System.out.println(Bytes.toString(result.value()));
+            }
+        }
 
     }
 
